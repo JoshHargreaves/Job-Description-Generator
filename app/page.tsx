@@ -170,13 +170,13 @@ export default function Home() {
               </span>
             </div>
             <div className=''>
-              <ul className="flex items-center gap-2 text-slate-900">
-                <li className="mr-2 hidden md:block">
+              <ul className="flex items-center justify-center text-slate-900">
+                <li className="mr-2">
                   <Link href="https://github.com/JoshHargreaves" className="hover:text-orange-600">
                     <FaGithub className="" style={{ fontSize: '24px' }} />
                   </Link>
                 </li>
-                <li className="mr-2 hidden md:block">
+                <li className="mr-2">
                   <Link href="https://www.linkedin.com/in/joshua-hargreaves-5b544b63/" className="hover:text-orange-600">
                     <FaLinkedin className="" style={{ fontSize: '24px' }} />
                   </Link>
