@@ -1,7 +1,9 @@
 "use client"; // This is a client component 
 import DropDown, { ToneType } from '@/components/DropDown';
+import Link from 'next/link';
 import { useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
+import { FaDiscord, FaGithub, FaLink, FaLinkedin, FaMailchimp, FaRegEnvelope, FaTwitter } from "react-icons/fa";
 
 export default function Home() {
   const [generatedDescription, setGeneratedDescription] = useState<string>("");
@@ -91,8 +93,8 @@ export default function Home() {
 
 
   return (
-    <main className="flex flex-1 w-full flex-col items-center justify-center text-center px-4 mt-12 sm:mt-20">
-      <section className="py-10 lg:py-20 ">
+    <main className="flex flex-1 w-full flex-col items-center justify-center text-center px-4 mt-6 sm:mt-6">
+      <section className="py-10 lg:py-6 ">
         <div className="px-4">
           <div className='max-w-5xl mx-auto'>
             <h1 className="sm:text-6xl text-4xl font-bold text-slate-900">
@@ -101,11 +103,11 @@ export default function Home() {
             <p className="sm:text-lg text-lg text-slate-600">
               Reach Talent Faster.
             </p>
-            <div className="flex flex-col md:flex-row w-full p-12">
+            <div className="flex flex-col md:flex-row w-full md:p-12">
               <div className='flex md:flex-col sm:flex-row s:w-full md:w-2/4'>
                 <div className="inline-block relative">
                   <form>
-                    <div className="px-5 pb-5">
+                    <div className="md:px-5 pb-5">
                       <input placeholder="Job Title" required name="jobTitle" onChange={e => { setJobTitle(e.currentTarget.value); }} className=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-white-100  border border-gray-300 rounded-md shadow-inner"></input>
                       <input placeholder="Industry" required onChange={e => { setIndustry(e.currentTarget.value); }} className=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-white-100  border border-gray-300 rounded-md shadow-inner"></input>
                       <input placeholder="Company Name" required onChange={e => { setCompanyName(e.currentTarget.value); }} className=" text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 text-base   transition duration-500 ease-in-out transform border-transparent rounded-lg bg-white-100  border border-gray-300 rounded-md shadow-inner"></input>
@@ -156,7 +158,40 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-slate-400" />
+        <footer className="z-20 w-full bg-inherit  flex items-center md:justify-between" >
+          <div className="w-full mx-auto max-w-screen-xl px-16 p-4 md:flex md:items-center md:justify-between">
+            <div className=''>
+              <span className="text-sm sm:text-center text-slate-600">
+                Powered by <a href="https://openai.com/blog/chatgpt" className='hover:text-orange-600 font-bold'
+                > ChatGPT</a> &
+                <a href="https://cotswoldjobs.co.uk" className='hover:text-orange-600 font-bold'
+                > Cotswold Jobs</a>
+              </span>
+            </div>
+            <div className=''>
+              <ul className="flex items-center gap-2 text-slate-900">
+                <li className="mr-2 hidden md:block">
+                  <Link href="https://github.com/JoshHargreaves" className="hover:text-orange-600">
+                    <FaGithub className="" style={{ fontSize: '24px' }} />
+                  </Link>
+                </li>
+                <li className="mr-2 hidden md:block">
+                  <Link href="https://www.linkedin.com/in/joshua-hargreaves-5b544b63/" className="hover:text-orange-600">
+                    <FaLinkedin className="" style={{ fontSize: '24px' }} />
+                  </Link>
+                </li>
+                <li>
+                  <Link href="mailto:me@joshhargreaves.co.uk" className="">
+                    <FaRegEnvelope className="" style={{ fontSize: '24px' }} />
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </footer>
       </section>
-    </main>
+
+    </main >
   )
 }
