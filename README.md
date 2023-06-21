@@ -1,5 +1,5 @@
 
-# Welcome to AI-Job-Generator Community
+# Welcome to Job-Description-Generator Community
 
 AI-Job-Generator is an AI tool to generate job descriptions. We welcome contributions and aim to optimise the prompts to produce the best job descriptions while providing an easy-to-use format.
 
