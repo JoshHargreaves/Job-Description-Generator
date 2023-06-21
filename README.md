@@ -15,6 +15,11 @@ AI-Job-Generator is an AI tool to generate job descriptions. We welcome contribu
 
 https://github.com/shnai0/linkedin-post-generator
 
+# API Key
+
+- Create API key at http://openai.com
+- Add API Key to OPENAI_API_KEY variable in .env.local
+
 ## Getting Started
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
