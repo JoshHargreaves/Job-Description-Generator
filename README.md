@@ -1,8 +1,23 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-Credit to https://github.com/shnai0/linkedin-post-generator
+# Welcome to AI-Job-Generator Community
+
+AI-Job-Generator is an AI tool to generate job descriptions. We welcome contributions and aim to optimise the prompts to produce the best job descriptions while providing an easy-to-use format.
+
+- Built-in a few hours so room for improvement
+- Built in NextJS
+- Using OpenAI
+- Open to contributors
+
+
+![Screenshot](/docs/images/index-screenshot.png)
+
+# Credits
+
+https://github.com/shnai0/linkedin-post-generator
 
 ## Getting Started
+
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 First, run the development server:
 
@@ -30,9 +45,3 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
