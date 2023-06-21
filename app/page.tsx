@@ -102,7 +102,7 @@ export default function Home() {
               Reach Talent Faster.
             </p>
             <div className="flex flex-col md:flex-row w-full p-12">
-              <div className='flex flex-col w-2/4 h-14'>
+              <div className='flex md:flex-col sm:flex-row s:w-full md:w-2/4'>
                 <div className="inline-block relative">
                   <form>
                     <div className="px-5 pb-5">
@@ -123,7 +123,7 @@ export default function Home() {
                   </form>
                 </div>
               </div>
-              <div className='flex flex-col w-2/4 h-14'>
+              <div className='flex md:flex-col sm:flex-row s:w-full md:w-2/4'>
                 <div className="inline-block relative text-slate-900 w-full">
                   <Toaster
                     position="top-right"
