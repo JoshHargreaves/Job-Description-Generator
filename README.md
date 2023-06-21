@@ -3,8 +3,8 @@
 
 AI-Job-Generator is an AI tool to generate job descriptions. We welcome contributions and aim to optimise the prompts to produce the best job descriptions while providing an easy-to-use format.
 
-- Built-in a few hours so room for improvement
-- Built in NextJS
+- Developed-in a few hours so room for improvement
+- Built-in NextJS + Tailwind
 - Using OpenAI
 - Open to contributors
 
