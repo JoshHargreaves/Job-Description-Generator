@@ -1,10 +1,10 @@
 
-# Welcome to AI-Job-Generator Community
+# Welcome to Job-Description-Generator Community
 
 AI-Job-Generator is an AI tool to generate job descriptions. We welcome contributions and aim to optimise the prompts to produce the best job descriptions while providing an easy-to-use format.
 
-- Built-in a few hours so room for improvement
-- Built in NextJS
+- Developed-in a few hours so room for improvement
+- Built-in NextJS + Tailwind
 - Using OpenAI
 - Open to contributors
 
@@ -14,6 +14,11 @@ AI-Job-Generator is an AI tool to generate job descriptions. We welcome contribu
 # Credits
 
 https://github.com/shnai0/linkedin-post-generator
+
+# API Key
+
+- Create API key at http://openai.com
+- Add API Key to OPENAI_API_KEY variable in .env.local
 
 ## Getting Started
 
