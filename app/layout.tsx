@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Job-Description-Generator',
-  description: 'Get the best description for you job !',
+  description: 'Generate job descriptions using ChatGPT',
 }
 
 export default function RootLayout({
