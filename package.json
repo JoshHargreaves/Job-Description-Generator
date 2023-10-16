@@ -12,7 +12,7 @@
     "@headlessui/react": "^1.7.15",
     "@heroicons/react": "^2.0.18",
     "@types/node": "20.4.2",
-    "@types/react": "18.2.20",
+    "@types/react": "18.2.28",
     "@types/react-dom": "18.2.6",
     "autoprefixer": "10.4.14",
     "eslint": "8.47.0",
