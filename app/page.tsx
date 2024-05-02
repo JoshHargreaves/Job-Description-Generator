@@ -172,7 +172,7 @@ export default function Home() {
             <div className=''>
               <ul className="flex items-center justify-center text-slate-900">
                 <li className="mr-2">
-                  <Link href="https://github.com/JoshHargreaves" className="hover:text-orange-600">
+                  <Link href="https://github.com/JoshHargreaves/Job-Description-Generator" className="hover:text-orange-600">
                     <FaGithub className="" style={{ fontSize: '24px' }} />
                   </Link>
                 </li>
