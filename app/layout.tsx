@@ -9,17 +9,13 @@ export const metadata = {
   description: 'Generate job descriptions using ChatGPT',
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} min-h-screen`}>
+      <body className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-100 text-gray-900">
         {children}
         <Footer />
       </body>
     </html>
-  )
+  );
 }

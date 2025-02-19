@@ -1,10 +1,8 @@
 "use client"; // This is a client component 
 
 import DropDown, { ToneType } from "@/components/DropDown";
-import Link from "next/link";
 import { useState, useCallback } from "react";
 import toast, { Toaster } from "react-hot-toast";
-import { FaGithub, FaLinkedin, FaRegEnvelope } from "react-icons/fa";
 
 export default function Home() {
   const [generatedDescription, setGeneratedDescription] = useState<string>("");
@@ -101,66 +99,70 @@ export default function Home() {
   };
 
   return (
-    <main className="flex flex-1 w-full flex-col items-center justify-center text-center px-4 mt-6">
-      <section className="py-10 lg:py-6">
-        <div className="max-w-5xl mx-auto text-center">
-          <h1 className="sm:text-6xl text-4xl font-bold text-slate-900">Generate A Job Description</h1>
-          <p className="sm:text-lg text-lg text-slate-600">Reach Talent Faster.</p>
-        </div>
+<main className="flex flex-col items-center justify-center mt-26 px-4 py-10 bg-gradient-to-br from-blue-50 to-purple-100">
+  <section className="w-full max-w-4xl text-center">
+    <h1 className="text-4xl sm:text-6xl font-bold text-gray-900">Generate A Job Description</h1>
+    <p className="text-lg sm:text-xl text-gray-700 mt-2">Reach Talent Faster with AI-powered job descriptions.</p>
 
-        <div className="flex flex-col md:flex-row w-full md:p-12">
-          {/* Input Form */}
-          <div className="flex md:flex-col sm:flex-row w-full md:w-2/4">
-            <form className="w-full p-5">
-              {["jobTitle", "industry", "companyName"].map((field) => (
-                <input
-                  key={field}
-                  name={field}
-                  placeholder={field.replace(/([A-Z])/g, " $1").trim()}
-                  required
-                  onChange={handleChange}
-                  className="text-black placeholder-gray-600 w-full px-4 py-2.5 mt-2 border border-gray-300 rounded-md shadow-inner"
-                />
-              ))}
-              <DropDown tone={tone} setTone={setTone} />
-              <textarea
-                name="keywords"
-                maxLength={2000}
-                required
-                onChange={handleChange}
-                placeholder="Keywords"
-                className="text-black w-full h-56 px-4 py-2.5 mt-2 border border-gray-300 rounded-md shadow-inner"
-                spellCheck="false"
-              />
-              <button
-                className="bg-orange-600 rounded-md text-white font-medium px-4 py-2.5 mt-2 hover:bg-black/80 w-full"
-                onClick={generateDescription}
-              >
-                Generate Job Description
-              </button>
-            </form>
-          </div>
+    {/* Flex Container for Form & Output */}
+    <div className="mt-8 flex flex-col md:flex-row gap-8 items-start">
+      
+      {/* Input Form */}
+      <form className="w-full md:w-1/2 bg-white p-6 rounded-2xl shadow-xl border border-gray-200">
+        <div className="space-y-4">
+          {["jobTitle", "industry", "companyName"].map((field) => (
+            <input
+              key={field}
+              name={field}
+              placeholder={field.replace(/([A-Z])/g, " $1").trim()}
+              required
+              onChange={handleChange}
+              className="w-full px-4 py-3 text-gray-900 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-400 focus:outline-none"
+            />
+          ))}
 
-          {/* Output Display */}
-          <div className="flex md:flex-col sm:flex-row w-full md:w-2/4">
-            {generatedDescription && (
-              <div className="max-w-5xl my-4 mx-auto">
-                <div
-                  className="bg-white rounded-xl shadow-md p-4 hover:bg-gray-100 transition cursor-copy border"
-                  onClick={() => {
-                    navigator.clipboard.writeText(generatedDescription);
-                    toast.success("Post copied to clipboard!");
-                  }}
-                >
-                  <p className="text-slate-900" dangerouslySetInnerHTML={{ __html: generatedDescription }} />
-                </div>
-              </div>
-            )}
-          </div>
+          <DropDown tone={tone} setTone={setTone} />
+
+          <textarea
+            name="keywords"
+            maxLength={2000}
+            required
+            onChange={handleChange}
+            placeholder="Keywords"
+            className="w-full h-40 px-4 py-3 text-gray-900 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-400 focus:outline-none"
+            spellCheck="false"
+          />
+
+          <button
+            className="w-full py-3 text-white bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg font-medium transition hover:opacity-90 focus:ring-2 focus:ring-indigo-400"
+            onClick={generateDescription}
+          >
+            🚀 Generate Job Description
+          </button>
         </div>
-        <hr className="h-px my-8 bg-gray-200 border-0 dark:bg-slate-400" />
-      </section>
-      <Toaster position="top-right" reverseOrder={false} />
-    </main>
+      </form>
+
+      {/* Output Display */}
+      {generatedDescription && (
+        <div className="w-full md:w-1/2 bg-white p-6 rounded-2xl shadow-xl border border-gray-200 cursor-copy hover:bg-gray-50 transition">
+          <p
+            className="text-gray-900"
+            dangerouslySetInnerHTML={{ __html: generatedDescription }}
+            onClick={() => {
+              navigator.clipboard.writeText(generatedDescription);
+              toast.success("Copied to clipboard!");
+            }}
+          />
+        </div>
+      )}
+    </div>
+
+    <hr className="h-px my-8 bg-gray-300 border-0" />
+  </section>
+
+  <Toaster position="top-right" reverseOrder={false} />
+</main>
+
+
   );
 }
