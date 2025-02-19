@@ -3,6 +3,7 @@
 import DropDown, { ToneType } from "@/components/DropDown";
 import { useState, useCallback } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import { track } from '@vercel/analytics';
 
 export default function Home() {
   const [generatedDescription, setGeneratedDescription] = useState<string>("");
@@ -70,6 +71,7 @@ export default function Home() {
     }
 
     setGeneratedDescription("");
+    track('generate');
     const prompt = handlePrompt();
 
     try {
