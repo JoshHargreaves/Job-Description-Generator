@@ -21,7 +21,7 @@ let tones: ToneType[] = ["Story", "Formal", "Fun"];
 
 export default function DropDown({ tone, setTone }: DropDownProps) {
     return (
-        <Menu as="div" className="block text-left w-full">
+        <Menu as="div" className="relative block text-left w-full">
             <div>
                 <Menu.Button className="inline-flex w-full justify-between items-center rounded-md border border-gray-300 bg-white px-4 py-2.5 mt-2 text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-blue">
                     {tone}
