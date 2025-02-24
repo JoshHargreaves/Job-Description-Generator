@@ -16,7 +16,7 @@
     "@types/react-dom": "18.3.0",
     "@vercel/analytics": "^1.5.0",
     "analytics": "github:vercel/analytics",
-    "autoprefixer": "10.4.19",
+    "autoprefixer": "10.4.20",
     "eslint": "9.20.1",
     "eslint-config-next": "15.0.3",
     "eventsource-parser": "^1.0.0",
