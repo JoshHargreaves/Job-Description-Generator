@@ -8,6 +8,7 @@ import { track } from '@vercel/analytics';
 export default function Home() {
   const [generatedDescription, setGeneratedDescription] = useState<string>("");
   const [tone, setTone] = useState<ToneType>("Story");
+  const [selectedPrompt, setSelectedPrompt] = useState<string>("prompt1");
   const [formData, setFormData] = useState({
     jobTitle: "",
     industry: "",
@@ -55,11 +56,33 @@ export default function Home() {
         : tone === "Formal"
         ? "This job description should be written in a professional and business-oriented tone."
         : tone === "Fun"
-        ? "This job description should be written in a lighthearted, exciting, and conversational style."
+        ? "This job description should be written in a lighthearted, exciting, and conversational style." 
         : ""
     }
     `;
   }, [formData, tone]);
+
+  const handleOldPrompt = useCallback(() => {
+    const { jobTitle, industry, companyName, keywords } = formData;
+  
+    let prompt = `I want you to act as a recruiter. I will provide some information about a job opening, and it will be your job to create an enganging job description. This will include a catchy opening paragraph, a responsibilities section, about us section and a skills required section.
+
+    The name of the hiring company is ${companyName}, the job title is ${jobTitle} and the company industry is ${industry}. These keywords will help create the description ${keywords}.`;
+    switch (tone) {
+      case "Story":
+        prompt += ` It should be a story`;
+        break;
+      case "Formal":
+        prompt += ` It should be Formal`;
+        break;
+      case "Fun":
+        prompt += ` It should be Fun`;
+        break;
+      default:
+        break;
+    }
+    return prompt;
+  }, [formData]);
 
   const generateDescription = async (e: React.FormEvent<HTMLButtonElement>) => {
     e.preventDefault();
@@ -72,7 +95,10 @@ export default function Home() {
 
     setGeneratedDescription("");
     track('generate');
-    const prompt = handlePrompt();
+    // Choose prompt based on selected option:
+    const prompt = selectedPrompt === "prompt1"
+      ? handleOldPrompt()
+      : handlePrompt();
 
     try {
       const response = await fetch("/api/generatedescription", {
@@ -135,6 +161,15 @@ export default function Home() {
             spellCheck="false"
           />
 
+          <select
+            value={selectedPrompt}
+            onChange={(e) => setSelectedPrompt(e.target.value)}
+            className="w-full px-4 py-3 text-gray-900 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-400 focus:outline-none"
+          >
+            <option value="prompt1">Prompt 1</option>
+            <option value="prompt2">Prompt 2 (Beta)</option>
+          </select>
+
           <button
             className="w-full py-3 text-white bg-gradient-to-r from-indigo-500 to-purple-600 rounded-lg font-medium transition hover:opacity-90 focus:ring-2 focus:ring-indigo-400"
             onClick={generateDescription}
@@ -164,7 +199,5 @@ export default function Home() {
 
   <Toaster position="top-right" reverseOrder={false} />
 </main>
-
-
   );
 }
